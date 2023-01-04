@@ -1,11 +1,16 @@
 from base64 import b64encode
 import os
+import environs
 import requests
 import youtube_dl
-
+#import environment varibales from .env
+from environs import Env
+env = Env()
+env.read_env()
+# Get the Spotify API credentials from the environment variables
+SPOTIFY_CLIENT_ID = env('SPOTIFY_CLIENT_ID')
+SPOTIFY_CLIENT_SECRET = env('SPOTIFY_CLIENT_SECRET')
 # Replace SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET with your own Spotify API credentials
-SPOTIFY_CLIENT_ID = "38960f01647b4cb8bd7a3517f3725df2"
-SPOTIFY_CLIENT_SECRET = "16d4afd2e75c413a90e3b306e139f5cc"
 
 # Replace PLAYLIST_ID with the ID of the Spotify playlist you want to download
 PLAYLIST_ID = "37i9dQZF1EJMeGJot5XqO9"
